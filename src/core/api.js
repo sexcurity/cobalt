@@ -89,7 +89,7 @@ export function runAPI(express, app, gitCommit, gitBranch, __dirname) {
             let lang = languageCode(req);
             let j = apiJSON(0, { t: "bad request" });
             try {
-                // let contentCon = String(req.header('content-type')) === "application/json";
+                let contentCon = String(req.header('content-type')) === "application/json";
                 let request = req.body;
                 if (request.url) {
                     request.dubLang = request.dubLang ? lang : false;
